@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Portfolio</title>
+</head>
+<body>
+  <div id="content">
+    <section class="portfolio-selection">
+      <h1>Projects</h1>
+      <div class="scroll-container">
+        
+        <% if (info && info.items && info.items.length > 0) { %>
+          <% info.items.forEach((item) => { %>
+            <form action="/details" method="POST" style="display: inline-block;">
+              <input type="hidden" name="id" value="<%= item.id %>">
+              <button type="submit" style="border: none; background: none; cursor: pointer;">
+                <img src="<%= item.img %>" alt="<%= item.title %>">
+                <h3><%= item.title %></h3>
+              </button>
+            </form>
+          <% }) %>
+        <% } else { %>
+          <p>No items available.</p>
+        <% } %>
+      </div>
+      <div class="item">
+        <% if (info.item) { %>
+            <h2><%= info.item.title %></h2>
+            <div class="item-info">
+              <img src="<%= info.item.img %>" alt="<%= info.item.title %>">
+              <p><%= info.item.description %></p>
+            </div>
+            <% if (info.item.url) { %>
+              <div class="button-box">
+                <a href="<%= info.item.url %>"><%= info.item.url_destination %></a>
+              </div>
+              <% } %>
+        <% } %>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

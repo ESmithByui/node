@@ -48,15 +48,16 @@ body {
   flex-direction: column; /* Stack content vertically */
   align-items: center; /* Center-align content */
   text-align: center; /* Center align text below the image */
-  min-width: 150px; /* Match the width of the image */
+  min-width: 350px; /* Match the width of the image */
 }
 
 .scroll-container h3 {
-  margin: 10px 0 0; /* Add some spacing above the title */
+  margin: 10px auto 0; /* Add some spacing above the title */
   font-size: 16px; /* Adjust font size */
   text-overflow: ellipsis; /* Truncate long titles */
   overflow: hidden; /* Hide overflowing text */
   white-space: nowrap; /* Prevent wrapping of titles */
+  max-width: 350px;
 }
 
 .item {
